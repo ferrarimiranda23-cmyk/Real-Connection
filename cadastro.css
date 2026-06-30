@@ -1,0 +1,173 @@
+/* =========================
+   PÁGINA DE CADASTRO
+========================= */
+.cadastro-page {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  min-height: 100vh;
+}
+
+/* =========================
+   LADO ESQUERDO DO CADASTRO
+========================= */
+.lado-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  position: relative;
+
+  background:
+    radial-gradient(circle at top right, rgba(236,72,153,0.25), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(139,92,246,0.25), transparent 30%),
+    linear-gradient(180deg, var(--cor-rosa) 0%, var(--cor-roxo) 50%, #5b21b6 100%);
+}
+
+.info-conteudo {
+  max-width: 420px;
+}
+
+.info-conteudo h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.info-conteudo p {
+  color: #e9d5ff;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.lista-destaques {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lista-destaques div {
+  background: rgba(255,255,255,0.08);
+  padding: 12px 16px;
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+}
+
+/* =========================
+   LADO DIREITO DO CADASTRO
+========================= */
+.lado-formulario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: var(--cor-fundo);
+}
+
+.card-formulario {
+  width: 100%;
+  max-width: 380px;
+  padding: 30px;
+  border-radius: 24px;
+
+  background: rgba(20, 10, 40, 0.75);
+  border: 1px solid var(--cor-borda);
+  backdrop-filter: blur(16px);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.5),
+    inset 0 0 20px rgba(168,85,247,0.08);
+
+  transition: 0.3s;
+}
+
+.card-formulario:hover {
+  transform: translateY(-4px);
+}
+
+.card-formulario h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* =========================
+   CAMPOS DO FORMULÁRIO
+========================= */
+.grupo-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.grupo-input label {
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+  margin-bottom: 6px;
+}
+
+.grupo-input input {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(10, 5, 25, 0.9);
+  color: #ffffff;
+  outline: none;
+  transition: 0.2s;
+}
+
+.grupo-input input::placeholder {
+  color: rgba(255,255,255,0.45);
+}
+
+.grupo-input input:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 0 2px rgba(168,85,247,0.3);
+}
+
+/* =========================
+   RODAPÉ DO FORMULÁRIO
+========================= */
+.rodape-form {
+  margin-top: 20px;
+  text-align: center;
+  color: var(--cor-texto-suave);
+}
+
+.rodape-form a {
+  color: var(--cor-roxo-claro);
+  text-decoration: none;
+  margin-left: 6px;
+}
+
+.rodape-form a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVO DO CADASTRO
+========================= */
+@media (max-width: 900px) {
+  .cadastro-page {
+    grid-template-columns: 1fr;
+  }
+
+  .lado-info {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .lado-formulario {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .info-conteudo h1 {
+    font-size: 2.2rem;
+  }
+
+  .card-formulario {
+    padding: 24px;
+  }
+}

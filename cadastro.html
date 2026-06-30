@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RealConnection | Cadastro</title>
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+
+  <main class="cadastro-page">
+
+    <!-- LADO ESQUERDO -->
+    <section class="lado-info">
+      <div class="info-conteudo">
+        <h1>Crie conexões reais</h1>
+
+        <p>
+          Mais do que aparência: encontre pessoas por valores,
+          propósito e estilo de vida.
+        </p>
+
+        <div class="lista-destaques">
+          <div>💜 Afinidade real</div>
+          <div>🧠 Compatibilidade inteligente</div>
+          <div>✨ Conversas com propósito</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LADO DIREITO -->
+    <section class="lado-formulario">
+
+      <div class="card-formulario">
+
+        <h2>Criar conta</h2>
+
+        <form action="editperfil.html" method="get">
+
+  <div class="grupo-input">
+    <label for="nome">Nome</label>
+    <input
+      id="nome"
+      name="nome"
+      type="text"
+      placeholder="Seu nome"
+      autocomplete="name"
+      required
+    >
+  </div>
+
+  <div class="grupo-input">
+    <label for="email">Email</label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      placeholder="seu@email.com"
+      autocomplete="email"
+      required
+    >
+  </div>
+
+  <div class="grupo-input">
+    <label for="data-nascimento">Data de nascimento</label>
+    <input
+      id="data-nascimento"
+      name="data-nascimento"
+      type="date"
+      autocomplete="bday"
+      required
+    >
+  </div>
+
+  <div class="grupo-input">
+    <label for="cidade">Cidade e estado</label>
+    <input
+      id="cidade"
+      name="cidade"
+      type="text"
+      placeholder="Ex: Rio de Janeiro, RJ"
+      autocomplete="address-level2"
+      required
+    >
+  </div>
+
+  <div class="grupo-input">
+    <label for="senha">Senha</label>
+    <input
+      id="senha"
+      name="senha"
+      type="password"
+      placeholder="Crie uma senha"
+      autocomplete="new-password"
+      minlength="6"
+      required
+    >
+  </div>
+
+  <div class="grupo-input">
+    <label for="confirmar-senha">Confirme a senha</label>
+    <input
+      id="confirmar-senha"
+      name="confirmar-senha"
+      type="password"
+      placeholder="Repita a senha"
+      autocomplete="new-password"
+      minlength="6"
+      required
+    >
+  </div>
+
+  <button class="btn-primary full" type="submit">Criar conta</button>
+
+</form>
+        
+
+        <div class="rodape-form">
+          <span>Já tem conta?</span>
+          <a href="login.html">Entrar</a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!--PASSEI O SCRIPT Q TAVA AQUI PRO ARQUIVO SCRIPT.JS PRA FICAR TUDO NUM LIGAR SÓ-->
+ <script src="script.js"></script>
+</body>
+</html>

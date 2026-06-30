@@ -1,0 +1,1049 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+:root {
+  --cor-fundo: #0a0714;
+  --cor-texto: #ffffff;
+  --cor-texto-suave: #c4b5fd;
+  --cor-card: rgba(255,255,255,0.05);
+  --cor-borda: rgba(255,255,255,0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--cor-texto);
+  background:
+    radial-gradient(circle at top left, rgba(236,72,153,0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(139,92,246,0.18), transparent 30%),
+    var(--cor-fundo);
+}
+
+/* =========================
+   PÁGINA INICIAL
+========================= */
+.pagina {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* =========================
+   BARRA DE NAVEGAÇÃO
+========================= */
+.navbar,
+.barra-navegacao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.nav-links,
+.links-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a,
+.links-menu a {
+  color: var(--cor-texto-suave);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+
+.nav-links a:hover,
+.links-menu a:hover {
+  color: #ffffff;
+}
+
+/* =========================
+   PARTE PRINCIPAL DA HOME
+========================= */
+.hero,
+.parte-principal {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.hero-text h1,
+.texto-principal h1 {
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.hero-text p,
+.texto-principal p {
+  color: var(--cor-texto-suave);
+  margin-bottom: 30px;
+  max-width: 520px;
+}
+
+.hero-card,
+.card-principal {
+  background: var(--cor-card);
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid var(--cor-borda);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+.btn-primary,
+.botao-principal {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-primary:hover,
+.botao-principal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(168,85,247,0.4);
+}
+
+.btn-secondary,
+.botao-secundario {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  color: #dddddd;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.btn-secondary:hover,
+.botao-secundario:hover {
+  background: rgba(255,255,255,0.14);
+}
+
+.btn-primary.full,
+.botao-principal.completo {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* =========================
+   BLOCOS DA PÁGINA
+========================= */
+.secao,
+.bloco {
+  margin-bottom: 80px;
+}
+
+.secao h2,
+.bloco h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   GRADES DE CARDS
+========================= */
+.grid-3,
+.grade-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid-2,
+.grade-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+  background: var(--cor-card);
+  padding: 24px;
+  border-radius: 22px;
+  border: 1px solid var(--cor-borda);
+  backdrop-filter: blur(14px);
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--cor-texto-suave);
+}
+
+/* =========================
+   DEPOIMENTOS
+========================= */
+.depoimentos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* =========================
+   CHAMADA FINAL
+========================= */
+.cta-final,
+.chamada-final {
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 28px;
+
+  background:
+    radial-gradient(circle at top, rgba(236,72,153,0.2), transparent 40%),
+    linear-gradient(180deg, #1a0b2e, #0a0714);
+}
+
+.cta-final h2,
+.chamada-final h2 {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+}
+
+.cta-final p,
+.chamada-final p {
+  color: var(--cor-texto-suave);
+  margin-bottom: 24px;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+.footer,
+.rodape {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--cor-borda);
+
+  display: flex;
+  justify-content: space-between;
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+}
+
+.footer a,
+.rodape a {
+  color: #c084fc;
+  text-decoration: none;
+}
+
+/* =========================
+   PÁGINA DE CADASTRO
+========================= */
+.cadastro-page {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  min-height: 100vh;
+}
+
+/* =========================
+   LADO ESQUERDO DO CADASTRO
+========================= */
+.lado-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  position: relative;
+
+  background:
+    radial-gradient(circle at top right, rgba(236,72,153,0.25), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(139,92,246,0.25), transparent 30%),
+    linear-gradient(180deg, #ec4899 0%, #8b5cf6 50%, #5b21b6 100%);
+}
+
+.info-conteudo {
+  max-width: 420px;
+}
+
+.info-conteudo h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.info-conteudo p {
+  color: #e9d5ff;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.lista-destaques {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lista-destaques div {
+  background: rgba(255,255,255,0.08);
+  padding: 12px 16px;
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+}
+
+/* =========================
+   LADO DIREITO DO CADASTRO
+========================= */
+.lado-formulario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: var(--cor-fundo);
+}
+
+.card-formulario {
+  width: 100%;
+  max-width: 380px;
+  padding: 30px;
+  border-radius: 24px;
+
+  background: rgba(20, 10, 40, 0.75);
+  border: 1px solid var(--cor-borda);
+  backdrop-filter: blur(16px);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.5),
+    inset 0 0 20px rgba(168,85,247,0.08);
+
+  transition: 0.3s;
+}
+
+.card-formulario:hover {
+  transform: translateY(-4px);
+}
+
+.card-formulario h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* =========================
+   CAMPOS DO FORMULÁRIO
+========================= */
+.grupo-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.grupo-input label {
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+  margin-bottom: 6px;
+}
+
+.grupo-input input {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(10, 5, 25, 0.9);
+  color: white;
+  outline: none;
+  transition: 0.2s;
+}
+
+.grupo-input input:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 0 2px rgba(168,85,247,0.3);
+}
+
+/* =========================
+   RODAPÉ DO FORMULÁRIO
+========================= */
+.rodape-form {
+  margin-top: 20px;
+  text-align: center;
+  color: var(--cor-texto-suave);
+}
+
+.rodape-form a {
+  color: #c084fc;
+  text-decoration: none;
+  margin-left: 6px;
+}
+
+.rodape-form a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   TELA DE EXPLORAR PERFIS
+========================= */
+.app,
+.tela-app {
+  display: flex;
+  min-height: 100vh;
+
+  background:
+    linear-gradient(rgba(5,5,20,0.9), rgba(5,5,20,0.95)),
+    linear-gradient(120deg, #3b82f6, #a855f7);
+}
+
+/* =========================
+   MENU LATERAL
+========================= */
+.sidebar,
+.menu-lateral {
+  width: 220px;
+  padding: 20px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.sidebar.collapsed,
+.menu-lateral.fechado {
+  width: 70px;
+}
+
+.sidebar nav a,
+.menu-lateral nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+  text-decoration: none;
+  color: white;
+}
+
+.sidebar.collapsed p,
+.menu-lateral.fechado p {
+  display: none;
+}
+
+.sidebar.collapsed .name,
+.menu-lateral.fechado .nome {
+  display: none;
+}
+
+#toggle,
+#abrir-menu {
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#toggle:hover,
+#abrir-menu:hover {
+  background: rgba(255,255,255,0.14);
+}
+
+.profile,
+.perfil-usuario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar,
+.foto-usuario {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: gray;
+}
+
+/* =========================
+   CONTEÚDO DA TELA DE PERFIS
+========================= */
+.content,
+.conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 30px;
+  flex: 1;
+}
+
+.info,
+.informacoes {
+  background: var(--cor-card);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.bio,
+.biografia {
+  color: #cccccc;
+}
+
+/* =========================
+   INFORMAÇÕES DO PERFIL
+========================= */
+.grid-info,
+.grade-informacoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.grid-info div,
+.grade-informacoes div {
+  background: var(--cor-card);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.grid-info strong,
+.grade-informacoes strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.grid-info span,
+.grade-informacoes span {
+  color: #dddddd;
+}
+
+/* =========================
+   INTERESSES
+========================= */
+.tags span,
+.interesses span {
+  display: inline-block;
+  background: rgba(255,255,255,0.1);
+  padding: 8px 12px;
+  border-radius: 999px;
+  margin: 0 8px 8px 0;
+}
+
+/* =========================
+   CARD DO PERFIL
+========================= */
+.perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foto {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  position: relative;
+  overflow: hidden;
+}
+
+.compatibilidade {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  background: rgba(0,0,0,0.6);
+  padding: 10px 14px;
+  border-radius: 14px;
+
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.compatibilidade strong {
+  font-size: 1.2rem;
+  display: block;
+}
+
+.compatibilidade span {
+  font-size: 0.75rem;
+  color: #cccccc;
+}
+
+.perfil-info {
+  text-align: center;
+}
+
+.perfil-info p {
+  color: var(--cor-texto-suave);
+}
+
+/* =========================
+   MOTIVOS DA AFINIDADE
+========================= */
+.afinidade {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 16px;
+
+  background: var(--cor-card);
+  text-align: center;
+}
+
+.afinidade strong {
+  color: #a855f7;
+}
+
+.afinidade p {
+  margin: 6px 0;
+}
+
+/* =========================
+   BOTÕES DO PERFIL
+========================= */
+.actions,
+.acoes {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.actions button,
+.acoes button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.like,
+.curtir {
+  background: #16a34a;
+}
+
+.no,
+.recusar {
+  background: #dc2626;
+}
+
+.fav,
+.favorito {
+  background: #7e22ce;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 700px) {
+  .hero,
+  .parte-principal,
+  .grid-3,
+  .grade-3,
+  .grid-2,
+  .grade-2,
+  .depoimentos,
+  .content,
+  .conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text h1,
+  .texto-principal h1 {
+    font-size: 2.4rem;
+  }
+
+  .cadastro-page {
+    grid-template-columns: 1fr;
+  }
+
+  .lado-info {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .lado-formulario {
+    padding: 30px 20px;
+  }
+
+  .app,
+  .tela-app {
+    flex-direction: column;
+  }
+
+  .sidebar,
+  .menu-lateral,
+  .sidebar.collapsed,
+  .menu-lateral.fechado {
+    width: 100%;
+  }
+
+  .content,
+  .conteudo {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar,
+  .barra-navegacao,
+  .footer,
+  .rodape {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .nav-links,
+  .links-menu {
+    flex-wrap: wrap;
+  }
+
+  .grid-info,
+  .grade-informacoes {
+    grid-template-columns: 1fr;
+  }
+
+  .actions,
+  .acoes {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* =========================
+   PÁGINA MEU PERFIL
+========================= */
+.perfil-page {
+  flex: 1;
+  padding: 30px;
+}
+
+.perfil-topo {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 24px;
+  align-items: center;
+
+  padding: 28px;
+  margin-bottom: 24px;
+
+  border-radius: 24px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--cor-borda);
+  backdrop-filter: blur(14px);
+}
+
+.foto-perfil-grande {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  border: 4px solid rgba(255,255,255,0.12);
+
+  color: #ffffff;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.perfil-dados-principais {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.perfil-titulo-linha {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.perfil-titulo-linha h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.selo-verificado {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  color: white;
+  font-weight: 700;
+}
+
+.perfil-idade,
+.perfil-local {
+  margin: 0;
+  color: var(--cor-texto-suave);
+}
+
+.perfil-completo-card {
+  min-width: 120px;
+  padding: 18px;
+  border-radius: 18px;
+
+  text-align: center;
+  background: linear-gradient(135deg, rgba(236,72,153,0.45), rgba(139,92,246,0.45));
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.perfil-completo-card strong {
+  display: block;
+  font-size: 2rem;
+}
+
+.perfil-completo-card span {
+  color: #e9d5ff;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   CARDS DO PERFIL
+========================= */
+.perfil-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 24px;
+}
+
+.perfil-card {
+  padding: 24px;
+  border-radius: 24px;
+
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--cor-borda);
+  backdrop-filter: blur(14px);
+}
+
+.perfil-card-grande {
+  grid-column: span 1;
+}
+
+.perfil-card-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.perfil-card-topo h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.perfil-card-topo a {
+  color: #c084fc;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.perfil-card p {
+  color: var(--cor-texto-suave);
+  line-height: 1.6;
+}
+
+/* =========================
+   OBJETIVO DO PERFIL
+========================= */
+.objetivo-card {
+  text-align: center;
+}
+
+.objetivo-card span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+  margin-bottom: 14px;
+
+  border-radius: 50%;
+  background: rgba(139,92,246,0.25);
+  font-size: 1.6rem;
+}
+
+.objetivo-card strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   FOTOS DO PERFIL
+========================= */
+.fotos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.foto-mini {
+  height: 110px;
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.foto-mini:not(:first-child) {
+  background: rgba(255,255,255,0.06);
+  border: 2px dashed rgba(255,255,255,0.18);
+  color: #c084fc;
+}
+
+/* =========================
+   TAGS DO PERFIL
+========================= */
+.perfil-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.perfil-tags span {
+  margin: 0;
+  background: rgba(139,92,246,0.22);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* =========================
+   PREFERÊNCIAS
+========================= */
+.preferencias-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.preferencias-grid div {
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+}
+
+.preferencias-grid span {
+  font-size: 1.5rem;
+}
+
+.preferencias-grid strong {
+  display: block;
+  margin-top: 8px;
+}
+
+.preferencias-grid p {
+  margin: 6px 0 0;
+}
+
+/* =========================
+   MENU DO PERFIL
+========================= */
+.profile {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  border-radius: 16px;
+  margin-bottom: 22px;
+}
+
+.perfil-menu-ativo {
+  background: rgba(255,255,255,0.08);
+}
+
+/* =========================
+   RESPONSIVO DO PERFIL
+========================= */
+@media (max-width: 1000px) {
+  .perfil-topo {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .foto-perfil-grande {
+    margin: 0 auto;
+  }
+
+  .perfil-titulo-linha {
+    justify-content: center;
+  }
+
+  .perfil-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .perfil-completo-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .perfil-page {
+    padding: 20px;
+  }
+
+  .perfil-topo,
+  .perfil-card {
+    padding: 20px;
+  }
+
+  .foto-perfil-grande {
+    width: 120px;
+    height: 120px;
+    font-size: 3rem;
+  }
+
+  .perfil-titulo-linha h1 {
+    font-size: 1.5rem;
+  }
+
+  .fotos-grid,
+  .preferencias-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

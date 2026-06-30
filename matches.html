@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RealConnection | Matches</title>
+
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="app.css">
+
+  <style>
+    .matches-page {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .matches-hero {
+      margin-bottom: 28px;
+      padding: 28px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--cor-borda);
+      backdrop-filter: blur(14px);
+    }
+
+    .matches-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--cor-roxo-claro);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .matches-hero h1 {
+      margin: 0 0 12px;
+      font-size: 2.2rem;
+    }
+
+    .matches-hero p {
+      max-width: 720px;
+      margin: 0;
+      color: var(--cor-texto-suave);
+      line-height: 1.6;
+    }
+
+    .matches-topo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .barra-busca-matches {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .barra-busca-matches input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid var(--cor-borda);
+      background: rgba(255,255,255,0.06);
+      color: var(--cor-texto);
+      outline: none;
+    }
+
+    .barra-busca-matches input::placeholder {
+      color: rgba(255,255,255,0.45);
+    }
+
+    .barra-busca-matches input:focus {
+      border-color: var(--cor-roxo);
+      box-shadow: 0 0 0 2px rgba(139,92,246,0.3);
+    }
+
+    .contador-matches {
+      padding: 12px 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--cor-borda);
+      color: var(--cor-texto-suave);
+      white-space: nowrap;
+    }
+
+    .contador-matches strong {
+      color: #ffffff;
+    }
+
+    .matches-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .match-card {
+      overflow: hidden;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--cor-borda);
+      backdrop-filter: blur(14px);
+      transition: 0.25s;
+    }
+
+    .match-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    .match-foto {
+      height: 260px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--cor-rosa), var(--cor-roxo));
+    }
+
+    .match-foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .match-compatibilidade {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.68);
+      color: #ffffff;
+      font-weight: 700;
+      backdrop-filter: blur(10px);
+    }
+
+    .match-status {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(22,163,74,0.9);
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .match-conteudo {
+      padding: 22px;
+    }
+
+    .match-conteudo h2 {
+      margin: 0 0 6px;
+      font-size: 1.35rem;
+    }
+
+    .match-cidade {
+      margin: 0 0 14px;
+      color: var(--cor-texto-suave);
+    }
+
+    .match-descricao {
+      margin: 0 0 16px;
+      color: var(--cor-texto-suave);
+      line-height: 1.5;
+    }
+
+    .match-acoes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .match-acoes a,
+    .match-acoes button {
+      text-align: center;
+      border: none;
+      font-family: Arial, sans-serif;
+    }
+
+    .sem-matches {
+      display: none;
+      padding: 36px;
+      border-radius: 24px;
+      text-align: center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--cor-borda);
+      color: var(--cor-texto-suave);
+    }
+
+    .sem-matches.mostrar {
+      display: block;
+    }
+
+    @media (max-width: 1100px) {
+      .matches-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .matches-page {
+        padding: 20px;
+      }
+
+      .matches-topo {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .barra-busca-matches {
+        max-width: 100%;
+      }
+
+      .matches-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .matches-hero h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar" id="sidebar">
+
+      <div class="top">
+        <button id="toggle" type="button" aria-label="Abrir ou fechar menu">☰</button>
+      </div>
+
+      <a href="perfil.html" class="profile">
+        <div class="avatar"></div>
+        <span class="name">Vitor</span>
+      </a>
+
+      <nav>
+        <a href="explorar.html"><span>🔍</span><p>Explorar</p></a>
+        <a href="matches.html" class="ativo"><span>❤️</span><p>Matches</p></a>
+        <a href="mensagens.html"><span>💬</span><p>Mensagens</p></a>
+        <a href="perfil.html"><span>👤</span><p>Meu perfil</p></a>
+        <a href="editperfil.html"><span>⚙️</span><p>Editar perfil</p></a>
+      </nav>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="matches-page">
+
+      <section class="matches-hero">
+        <span class="matches-label">Suas conexões</span>
+
+        <h1>Matches com afinidade real</h1>
+
+        <p>
+          Aqui aparecem pessoas que também demonstraram interesse em você.
+          Continue a conversa, veja o perfil completo ou remova o match.
+        </p>
+      </section>
+
+      <section class="matches-topo">
+        <div class="barra-busca-matches">
+          <input
+            type="text"
+            id="buscarMatch"
+            placeholder="Pesquisar match por nome, cidade ou interesse..."
+          >
+        </div>
+
+        <div class="contador-matches">
+          <strong id="totalMatches">0</strong> matches encontrados
+        </div>
+      </section>
+
+      <section class="matches-grid" id="listaMatches">
+
+        <article
+          class="match-card"
+          data-busca="julia são paulo livros café fé relacionamento sério"
+        >
+          <div class="match-foto">
+            <img src="julia.jpg" alt="Foto de Julia">
+            <span class="match-compatibilidade">86%</span>
+            <span class="match-status">Novo match</span>
+          </div>
+
+          <div class="match-conteudo">
+            <h2>Julia, 24</h2>
+            <p class="match-cidade">📍 São Paulo, SP</p>
+
+            <p class="match-descricao">
+              Vocês combinam em livros, café e fé.
+            </p>
+
+            <div class="tags">
+              <span>Livros</span>
+              <span>Café</span>
+              <span>Fé</span>
+            </div>
+
+            <div class="match-acoes">
+              <a href="lobby.html?pessoa=julia" class="btn-secondary">Ver perfil</a>
+              <a href="mensagens.html?chat=julia" class="btn-primary">Conversar</a>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="match-card"
+          data-busca="amanda rio de janeiro música viagens respeito"
+        >
+          <div class="match-foto">
+            <img src="amanda.jpg" alt="Foto de Amanda">
+            <span class="match-compatibilidade">78%</span>
+            <span class="match-status">Online</span>
+          </div>
+
+          <div class="match-conteudo">
+            <h2>Amanda, 22</h2>
+            <p class="match-cidade">📍 Rio de Janeiro, RJ</p>
+
+            <p class="match-descricao">
+              Vocês combinam em música, viagens e conversas leves.
+            </p>
+
+            <div class="tags">
+              <span>Música</span>
+              <span>Viagens</span>
+              <span>Respeito</span>
+            </div>
+
+            <div class="match-acoes">
+              <a href="lobby.html?pessoa=amanda" class="btn-secondary">Ver perfil</a>
+              <a href="mensagens.html?chat=amanda" class="btn-primary">Conversar</a>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="match-card"
+          data-busca="marina duque de caxias academia pets família estabilidade"
+        >
+          <div class="match-foto">
+            <img src="marina.jpg" alt="Foto de Marina">
+            <span class="match-compatibilidade">71%</span>
+            <span class="match-status">Match recente</span>
+          </div>
+
+          <div class="match-conteudo">
+            <h2>Marina, 23</h2>
+            <p class="match-cidade">📍 Duque de Caxias, RJ</p>
+
+            <p class="match-descricao">
+              Vocês combinam em família, rotina equilibrada e estabilidade.
+            </p>
+
+            <div class="tags">
+              <span>Academia</span>
+              <span>Pets</span>
+              <span>Família</span>
+            </div>
+
+            <div class="match-acoes">
+              <a href="lobby.html?pessoa=marina" class="btn-secondary">Ver perfil</a>
+              <a href="mensagens.html?chat=marina" class="btn-primary">Conversar</a>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <section class="sem-matches" id="semMatches">
+        Nenhum match encontrado com essa busca.
+      </section>
+
+    </main>
+
+  </div>
+
+  <script>
+    (() => {
+      const toggle = document.getElementById("toggle");
+      const sidebar = document.getElementById("sidebar");
+
+      if (toggle && sidebar) {
+        toggle.addEventListener("click", () => {
+          sidebar.classList.toggle("collapsed");
+        });
+      }
+
+      const dadosSalvos = localStorage.getItem("usuarioRealConnection");
+
+      if (dadosSalvos) {
+        const usuario = JSON.parse(dadosSalvos);
+        const primeiroNome = usuario.nome ? usuario.nome.split(" ")[0] : "Usuário";
+        const nomesMenu = document.querySelectorAll(".sidebar .name, .menu-lateral .nome");
+
+        nomesMenu.forEach(nome => {
+          nome.textContent = primeiroNome;
+        });
+      }
+
+      const buscarMatch = document.getElementById("buscarMatch");
+      const cards = document.querySelectorAll(".match-card");
+      const totalMatches = document.getElementById("totalMatches");
+      const semMatches = document.getElementById("semMatches");
+
+      function atualizarMatches() {
+        const termo = buscarMatch.value.toLowerCase().trim();
+        let totalVisivel = 0;
+
+        cards.forEach(card => {
+          const texto = card.dataset.busca.toLowerCase();
+
+          if (texto.includes(termo)) {
+            card.classList.remove("esconder");
+            totalVisivel++;
+          } else {
+            card.classList.add("esconder");
+          }
+        });
+
+        totalMatches.textContent = totalVisivel;
+
+        if (totalVisivel === 0) {
+          semMatches.classList.add("mostrar");
+        } else {
+          semMatches.classList.remove("mostrar");
+        }
+      }
+
+      buscarMatch.addEventListener("input", atualizarMatches);
+
+      atualizarMatches();
+    })();
+  </script>
+<script src="script.js"></script>
+</body>
+</html>

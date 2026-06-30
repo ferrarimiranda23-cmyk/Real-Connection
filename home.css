@@ -1,0 +1,216 @@
+/* =========================
+   PÁGINA INICIAL
+========================= */
+.pagina {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* =========================
+   BARRA DE NAVEGAÇÃO
+========================= */
+.navbar,
+.barra-navegacao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.nav-links,
+.links-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a,
+.links-menu a {
+  color: var(--cor-texto-suave);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+
+.nav-links a:hover,
+.links-menu a:hover {
+  color: #ffffff;
+}
+
+/* =========================
+   PARTE PRINCIPAL DA HOME
+========================= */
+.hero,
+.parte-principal {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.hero-text h1,
+.texto-principal h1 {
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.hero-text p,
+.texto-principal p {
+  color: var(--cor-texto-suave);
+  margin-bottom: 30px;
+  max-width: 520px;
+}
+
+.hero-card,
+.card-principal {
+  background: var(--cor-card);
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid var(--cor-borda);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* =========================
+   BLOCOS DA PÁGINA
+========================= */
+.secao,
+.bloco {
+  margin-bottom: 80px;
+}
+
+.secao h2,
+.bloco h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   GRADES DA HOME
+========================= */
+.grid-3,
+.grade-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid-2,
+.grade-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* =========================
+   DEPOIMENTOS
+========================= */
+.depoimentos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* =========================
+   CHAMADA FINAL
+========================= */
+.cta-final,
+.chamada-final {
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 28px;
+
+  background:
+    radial-gradient(circle at top, rgba(236,72,153,0.2), transparent 40%),
+    linear-gradient(180deg, #1a0b2e, #0a0714);
+}
+
+.cta-final h2,
+.chamada-final h2 {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+}
+
+.cta-final p,
+.chamada-final p {
+  color: var(--cor-texto-suave);
+  margin-bottom: 24px;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+.footer,
+.rodape {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--cor-borda);
+
+  display: flex;
+  justify-content: space-between;
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+}
+
+.footer a,
+.rodape a {
+  color: var(--cor-roxo-claro);
+  text-decoration: none;
+}
+
+/* =========================
+   RESPONSIVO DA HOME
+========================= */
+@media (max-width: 900px) {
+  .hero,
+  .parte-principal,
+  .grid-3,
+  .grade-3,
+  .grid-2,
+  .grade-2,
+  .depoimentos {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text h1,
+  .texto-principal h1 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .pagina {
+    padding: 24px 18px 60px;
+  }
+
+  .navbar,
+  .barra-navegacao,
+  .footer,
+  .rodape {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .nav-links,
+  .links-menu {
+    flex-wrap: wrap;
+  }
+
+  .cta-final h2,
+  .chamada-final h2 {
+    font-size: 1.8rem;
+  }
+}

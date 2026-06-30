@@ -1,0 +1,305 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+:root {
+  --cor-fundo: #0a0714;
+  --cor-texto: #ffffff;
+  --cor-texto-suave: #c4b5fd;
+  --cor-card: rgba(20, 10, 40, 0.78);
+  --cor-borda: rgba(255,255,255,0.08);
+  --cor-campo: rgba(10, 5, 25, 0.9);
+  --cor-rosa: #ec4899;
+  --cor-roxo: #8b5cf6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================
+   CORPO DA PÁGINA
+========================= */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: var(--cor-texto);
+  background:
+    radial-gradient(circle at top left, rgba(236,72,153,0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(139,92,246,0.18), transparent 30%),
+    var(--cor-fundo);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* =========================
+   CAIXA DO FORMULÁRIO
+========================= */
+.form-container {
+  width: 100%;
+  max-width: 560px;
+  padding: 30px;
+  border-radius: 24px;
+
+  background: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  backdrop-filter: blur(16px);
+}
+
+/* =========================
+   TOPO COM BOTÕES E PROGRESSO
+========================= */
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   BARRA DE PROGRESSO
+========================= */
+.progress {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(135deg, var(--cor-rosa), var(--cor-roxo));
+  transition: width 0.3s ease;
+}
+
+/* =========================
+   BOTÕES DE VOLTAR E AVANÇAR
+========================= */
+#prev,
+#next {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(255,255,255,0.08);
+  color: var(--cor-texto);
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#prev:hover,
+#next:hover {
+  background: rgba(255,255,255,0.14);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   PERGUNTAS DO FORMULÁRIO
+========================= */
+.steps {
+  width: 100%;
+}
+
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+.step h2 {
+  font-size: 1.55rem;
+  margin: 0 0 20px;
+  line-height: 1.3;
+}
+
+/* =========================
+   CAMPOS DE RESPOSTA
+========================= */
+.step input,
+.step select,
+.step textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--cor-campo);
+  color: var(--cor-texto);
+
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+
+  outline: none;
+  transition: 0.2s;
+}
+
+.step input::placeholder,
+.step textarea::placeholder {
+  color: rgba(255,255,255,0.45);
+}
+
+.step input:focus,
+.step select:focus,
+.step textarea:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 0 2px rgba(168,85,247,0.3);
+}
+
+.step select {
+  cursor: pointer;
+}
+
+.step select option {
+  background: #12091f;
+  color: #ffffff;
+}
+
+.step textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* =========================
+   OPÇÕES EM BOTÕES
+========================= */
+.opcoes-container {
+  width: 100%;
+}
+
+.opcoes-grid {
+  max-height: 330px;
+  overflow-y: auto;
+  padding-right: 10px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 28px;
+}
+
+.opcoes-grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.opcoes-grid::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.12);
+  border-radius: 999px;
+}
+
+.opcoes-grid::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.75);
+  border-radius: 999px;
+}
+
+.opcao-btn {
+  width: 100%;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+
+  background: linear-gradient(135deg, var(--cor-rosa), var(--cor-roxo));
+  color: #ffffff;
+
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.opcao-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(168,85,247,0.35);
+}
+
+.opcao-btn.selecionado {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.25);
+}
+
+.contador-opcoes {
+  margin-top: 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--cor-texto);
+  font-size: 1rem;
+}
+
+.campo-outros {
+  display: none;
+  margin-top: 20px;
+}
+
+.campo-outros.mostrar {
+  display: block;
+}
+
+/* =========================
+   BOTÃO FINAL
+========================= */
+.btn-finalizar {
+  width: 100%;
+  margin-top: 22px;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 14px;
+
+  background: linear-gradient(135deg, var(--cor-rosa), var(--cor-roxo));
+  color: #ffffff;
+
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-finalizar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(168,85,247,0.4);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 600px) {
+  body {
+    padding: 16px;
+  }
+
+  .form-container {
+    padding: 22px;
+  }
+
+  .step h2 {
+    font-size: 1.3rem;
+  }
+
+  #prev,
+  #next {
+    width: 38px;
+    height: 38px;
+  }
+
+  .step input,
+  .step select,
+  .step textarea {
+    font-size: 0.95rem;
+  }
+
+  .opcoes-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}

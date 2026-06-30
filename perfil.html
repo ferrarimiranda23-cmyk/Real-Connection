@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RealConnection | Meu Perfil</title>
+
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar" id="sidebar">
+
+      <div class="top">
+        <button id="toggle" type="button" aria-label="Abrir ou fechar menu">☰</button>
+      </div>
+
+      <a href="perfil.html" class="profile perfil-menu-ativo">
+        <div class="avatar"></div>
+        <span class="name" id="menu-nome-usuario">Usuário</span>
+      </a>
+
+      <nav>
+        <a href="explorar.html"><span>🔍</span><p>Explorar</p></a>
+        <a href="matches.html"><span>❤️</span><p>Matches</p></a>
+        <a href="mensagens.html"><span>💬</span><p>Mensagens</p></a>
+        <a href="perfil.html" class="ativo"><span>👤</span><p>Meu perfil</p></a>
+        <a href="editperfil.html"><span>⚙️</span><p>Editar perfil</p></a>
+      </nav>
+
+    </aside>
+
+    <!-- CONTEÚDO DO PERFIL -->
+    <main class="perfil-page">
+
+      <!-- TOPO DO PERFIL -->
+      <section class="perfil-topo">
+
+        <!-- FOTO PRINCIPAL -->
+        <div
+          class="foto-perfil-grande"
+          style="cursor: pointer;"
+          onclick="document.getElementById('input-foto-principal').click();"
+        >
+          <img
+            id="img-perfil-principal"
+            src="vitor1.jpg"
+            alt="Foto de perfil"
+            style="width:100%; height:100%; object-fit:cover; border-radius:50%;"
+          >
+
+          <input
+            type="file"
+            id="input-foto-principal"
+            accept="image/*"
+            style="display: none;"
+          >
+        </div>
+
+        <!-- DADOS PRINCIPAIS -->
+        <div class="perfil-dados-principais">
+
+          <div class="perfil-titulo-linha">
+            <h1 id="perfil-nome">Carregando...</h1>
+            <span class="selo-verificado">✓</span>
+          </div>
+
+          <p class="perfil-idade" id="perfil-idade">-- anos</p>
+          <p class="perfil-local" id="perfil-local">📍 --</p>
+
+          <a href="editperfil.html" class="btn-secondary">Editar informações</a>
+
+        </div>
+
+        <!-- STATUS DO PERFIL -->
+        <div class="perfil-completo-card">
+          <strong>100%</strong>
+          <span>Perfil completo</span>
+        </div>
+
+      </section>
+
+      <!-- CARDS DO PERFIL -->
+      <section class="perfil-grid">
+
+        <!-- SOBRE -->
+        <article class="perfil-card perfil-card-grande">
+
+          <div class="perfil-card-topo">
+            <h2>Sobre mim</h2>
+            <a href="editperfil.html">Editar</a>
+          </div>
+
+          <p id="perfil-descricao">Nenhuma descrição adicionada.</p>
+
+        </article>
+
+        <!-- OBJETIVO -->
+        <article class="perfil-card">
+
+          <div class="perfil-card-topo">
+            <h2>Objetivo no site</h2>
+            <a href="editperfil.html">Editar</a>
+          </div>
+
+          <div class="objetivo-card">
+            <span>💜</span>
+            <strong id="perfil-objetivo">Não informado</strong>
+            <p>Busca definida no cadastro.</p>
+          </div>
+
+        </article>
+
+        <!-- FOTOS -->
+        <article class="perfil-card perfil-card-grande">
+
+          <div class="perfil-card-topo">
+            <h2>Minhas fotos</h2>
+            <a href="#">Clique nas fotos para editar</a>
+          </div>
+
+          <div class="fotos-grid">
+
+            <div
+              class="foto-mini foto-container"
+              style="cursor: pointer; overflow: hidden;"
+              onclick="document.getElementById('input-galeria-1').click();"
+            >
+              <img
+                id="img-galeria-1"
+                src="vitor1.jpg"
+                alt="Foto 1"
+                style="width:100%; height:100%; object-fit:cover; border-radius:16px;"
+              >
+
+              <input
+                type="file"
+                id="input-galeria-1"
+                accept="image/*"
+                style="display: none;"
+              >
+            </div>
+
+            <div
+              class="foto-mini foto-container"
+              style="cursor: pointer; overflow: hidden;"
+              onclick="document.getElementById('input-galeria-2').click();"
+            >
+              <img
+                id="img-galeria-2"
+                src="vitor2.jpg"
+                alt="Foto 2"
+                style="width:100%; height:100%; object-fit:cover; border-radius:16px;"
+              >
+
+              <input
+                type="file"
+                id="input-galeria-2"
+                accept="image/*"
+                style="display: none;"
+              >
+            </div>
+
+            <div
+              class="foto-mini foto-container"
+              style="cursor: pointer; overflow: hidden;"
+              onclick="document.getElementById('input-galeria-3').click();"
+            >
+              <img
+                id="img-galeria-3"
+                src="vitor3.jpg"
+                alt="Foto 3"
+                style="width:100%; height:100%; object-fit:cover; border-radius:16px;"
+              >
+
+              <input
+                type="file"
+                id="input-galeria-3"
+                accept="image/*"
+                style="display: none;"
+              >
+            </div>
+
+            <div
+              class="foto-mini foto-container"
+              style="cursor: pointer; overflow: hidden;"
+              onclick="document.getElementById('input-galeria-4').click();"
+            >
+              <img
+                id="img-galeria-4"
+                src="vitor4.jpg"
+                alt="Foto 4"
+                style="width:100%; height:100%; object-fit:cover; border-radius:16px;"
+              >
+
+              <input
+                type="file"
+                id="input-galeria-4"
+                accept="image/*"
+                style="display: none;"
+              >
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- INTERESSES -->
+        <article class="perfil-card perfil-card-grande">
+
+          <div class="perfil-card-topo">
+            <h2>Interesses</h2>
+            <a href="editperfil.html">Editar</a>
+          </div>
+
+          <div class="tags perfil-tags" id="container-interesses"></div>
+
+        </article>
+
+        <!-- VALORES -->
+        <article class="perfil-card perfil-card-grande">
+
+          <div class="perfil-card-topo">
+            <h2>Valores importantes</h2>
+            <a href="editperfil.html">Editar</a>
+          </div>
+
+          <div class="tags perfil-tags" id="container-valores"></div>
+
+        </article>
+
+        <!-- PREFERÊNCIAS -->
+        <article class="perfil-card perfil-card-grande">
+
+          <div class="perfil-card-topo">
+            <h2>Preferência de match</h2>
+            <a href="editperfil.html">Editar</a>
+          </div>
+
+          <div class="preferencias-grid">
+
+            <div>
+              <span>👤</span>
+              <strong>Civil / Sexualidade</strong>
+              <p id="perfil-preferencia-social">--</p>
+            </div>
+
+            <div>
+              <span>📍</span>
+              <strong>Estilo de vida</strong>
+              <p id="perfil-preferencia-vida">--</p>
+            </div>
+
+            <div>
+              <span>💬</span>
+              <strong>Conversa</strong>
+              <p id="perfil-preferencia-conversa">--</p>
+            </div>
+
+          </div>
+
+        </article>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

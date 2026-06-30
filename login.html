@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RealConnection | Login</title>
+
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+
+  <main class="cadastro-page">
+
+    <!-- LADO ESQUERDO -->
+    <section class="lado-info">
+
+      <div class="info-conteudo">
+        <h1>Crie conexões reais</h1>
+
+        <p>
+          Mais do que aparência: encontre pessoas por valores,
+          propósito e estilo de vida.
+        </p>
+
+        <div class="lista-destaques">
+          <div>💜 Afinidade real</div>
+          <div>🧠 Compatibilidade inteligente</div>
+          <div>✨ Conversas com propósito</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- LADO DIREITO -->
+    <section class="lado-formulario">
+
+      <div class="card-formulario">
+
+        <h2>Entrar na conta</h2>
+
+        <form id="formLogin" action="explorar.html" method="get">
+
+          <div class="grupo-input">
+            <label for="email">Email</label>
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="seu@email.com"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="grupo-input">
+            <label for="senha">Senha</label>
+
+            <input
+              id="senha"
+              name="senha"
+              type="password"
+              placeholder="Digite sua senha"
+              autocomplete="current-password"
+              minlength="6"
+              required
+            >
+          </div>
+
+          <button class="btn-primary full" type="submit">Entrar</button>
+
+        </form>
+
+        <div class="rodape-form">
+          <span>Não tem conta?</span>
+          <a href="cadastro.html">Criar conta</a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

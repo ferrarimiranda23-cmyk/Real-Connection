@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RealConnection | Editar Perfil</title>
+  <link rel="stylesheet" href="style-editperfil.css">
+</head>
+<body>
+
+  <div class="form-container">
+
+    <!-- TOPO -->
+    <div class="top-bar">
+      <button id="prev" type="button" aria-label="Pergunta anterior">◀</button>
+
+      <div class="progress">
+        <div class="progress-fill"></div>
+      </div>
+
+      <button id="next" type="button" aria-label="Próxima pergunta">▶</button>
+    </div>
+
+    <!-- PERGUNTAS -->
+    <form class="steps" action="explorar.html" method="get">
+
+      <div class="step active">
+        <h2>Qual é o seu estado civil?</h2>
+        <select name="estado-civil">
+          <option value="">Selecione uma opção</option>
+          <option value="solteiro">Solteiro(a)</option>
+          <option value="divorciado">Divorciado(a)</option>
+          <option value="viuvo">Viúvo(a)</option>
+        </select>
+      </div>
+
+      <div class="step">
+        <h2>Você tem filhos?</h2>
+        <select name="filhos">
+          <option value="">Selecione uma opção</option>
+          <option value="nao">Não</option>
+          <option value="sim">Sim</option>
+        </select>
+      </div>
+
+      <div class="step">
+        <h2>Você fuma?</h2>
+        <select name="fuma">
+          <option value="">Selecione uma opção</option>
+          <option value="nao">Não</option>
+          <option value="sim">Sim</option>
+          <option value="as-vezes">Às vezes</option>
+        </select>
+      </div>
+
+      <div class="step">
+        <h2>Você bebe álcool?</h2>
+        <select name="alcool">
+          <option value="">Selecione uma opção</option>
+          <option value="nao">Não</option>
+          <option value="socialmente">Socialmente</option>
+          <option value="sim">Sim</option>
+        </select>
+      </div>
+
+      <div class="step">
+        <h2>Qual é a sua religião?</h2>
+        <input type="text" name="religiao" placeholder="Ex: cristã, católica, espirita, nenhuma">
+      </div>
+
+      <div class="step">
+        <h2>Qual é a sua sexualidade?</h2>
+        <select name="sexualidade" id="sexualidade">
+      <option value="">Selecione uma opção</option>
+      <option value="heterossexual">Heterossexual</option>
+      <option value="homossexual">Homossexual</option>
+      <option value="bissexual">Bissexual</option>
+      <option value="pansexual">Pansexual</option>
+      <option value="assexual">Assexual</option>
+      <option value="prefiro-nao-informar">Prefiro não informar</option>
+      <option value="outro">Outro</option>
+      </select>
+
+        <input
+          type="text"
+          class="campo-outros campo-outros-select"
+          id="sexualidade-outro"
+          name="sexualidade-outro"
+          placeholder="Digite sua sexualidade"
+  >   </div>
+
+      <div class="step">
+        <h2>Como você se descreveria?</h2>
+        <textarea name="descricao" placeholder="Fale um pouco sobre você"></textarea>
+      </div>
+
+      <div class="step">
+        <h2>O que você busca no RealConnection?</h2>
+        <select name="objetivo">
+          <option value="">Selecione uma opção</option>
+          <option value="relacionamento-serio">Relacionamento sério</option>
+          <option value="novas-conexoes">Novas conexões</option>
+          <option value="amizades">Amizades</option>
+          <option value="conversas-com-proposito">Conversas com propósito</option>
+        </select>
+      </div>
+
+      <div class="step">
+        <h2>Quais valores são importantes para você?</h2>
+        <div class="opcoes-container" data-minimo="5">
+    <div class="opcoes-grid">
+
+      <button type="button" class="opcao-btn" data-value="familia">Família</button>
+      <button type="button" class="opcao-btn" data-value="fe">Fé</button>
+
+      <button type="button" class="opcao-btn" data-value="respeito">Respeito</button>
+      <button type="button" class="opcao-btn" data-value="honestidade">Honestidade</button>
+
+      <button type="button" class="opcao-btn" data-value="dialogo">Diálogo</button>
+      <button type="button" class="opcao-btn" data-value="lealdade">Lealdade</button>
+
+      <button type="button" class="opcao-btn" data-value="empatia">Empatia</button>
+      <button type="button" class="opcao-btn" data-value="responsabilidade">Responsabilidade</button>
+
+      <button type="button" class="opcao-btn" data-value="crescimento-pessoal">Crescimento pessoal</button>
+      <button type="button" class="opcao-btn" data-value="estabilidade">Estabilidade</button>
+
+      <button type="button" class="opcao-btn" data-value="proposito">Propósito</button>
+      <button type="button" class="opcao-btn" data-value="outros">Outros</button>
+
+    </div>
+
+    <input
+      type="text"
+      class="campo-outros"
+      name="valores-outros"
+      placeholder="Digite outro valor importante para você"
+    >
+
+    <div class="contador-opcoes">
+      <span>Selecione no mínimo 5</span>
+      <span><strong class="total-selecionado">0</strong>/5</span>
+    </div>
+
+      <input type="hidden" name="valores" class="valores-selecionados">
+    </div>
+      </div>
+
+      <div class="step">
+        <h2>Quais são seus principais interesses?</h2>
+        <div class="opcoes-container" data-minimo="5">
+          <div class="opcoes-grid">
+
+      <button type="button" class="opcao-btn" data-value="livros">Livros</button>
+      <button type="button" class="opcao-btn" data-value="musica">Música</button>
+
+      <button type="button" class="opcao-btn" data-value="filmes">Filmes</button>
+      <button type="button" class="opcao-btn" data-value="series">Séries</button>
+
+      <button type="button" class="opcao-btn" data-value="games">Games</button>
+      <button type="button" class="opcao-btn" data-value="cozinhar">Cozinhar</button>
+
+      <button type="button" class="opcao-btn" data-value="viagens">Viagens</button>
+      <button type="button" class="opcao-btn" data-value="academia">Academia</button>
+
+      <button type="button" class="opcao-btn" data-value="cafe">Café</button>
+      <button type="button" class="opcao-btn" data-value="pets">Pets</button>
+
+      <button type="button" class="opcao-btn" data-value="cachorros">Cachorros</button>
+      <button type="button" class="opcao-btn" data-value="gatos">Gatos</button>
+
+      <button type="button" class="opcao-btn" data-value="trilha">Trilha</button>
+      <button type="button" class="opcao-btn" data-value="esportes">Esportes</button>
+
+      <button type="button" class="opcao-btn" data-value="tecnologia">Tecnologia</button>
+      <button type="button" class="opcao-btn" data-value="arte">Arte</button>
+
+      <button type="button" class="opcao-btn" data-value="fotografia">Fotografia</button>
+      <button type="button" class="opcao-btn" data-value="outros">Outros</button>
+
+    </div>
+
+    <input
+      type="text"
+      class="campo-outros"
+      name="interesses-outros"
+      placeholder="Digite outro interesse importante para você"
+    >
+
+    <div class="contador-opcoes">
+      <span>Selecione no mínimo 5</span>
+      <span><strong class="total-selecionado">0</strong>/5</span>
+    </div>
+
+    <input type="hidden" name="interesses" class="valores-selecionados">
+  </div>
+</div>
+
+      <div class="step">
+        <h2>Como é seu estilo de vida?</h2>
+        <select name="estilo-vida">
+          <option value="">Selecione uma opção</option>
+          <option value="caseiro">Mais caseiro(a)</option>
+          <option value="social">Mais social</option>
+          <option value="equilibrado">Equilibrado</option>
+          <option value="aventureiro">Gosta de sair e explorar lugares</option>
+          <option value="outro">Outro</option>
+        </select>
+      </div>
+
+      <div class="step">
+        <h2>Que tipo de conversa você gosta?</h2>
+        <select name="tipo-conversa">
+          <option value="">Selecione uma opção</option>
+          <option value="leve">Conversas leves</option>
+          <option value="profunda">Conversas profundas</option>
+          <option value="engracada">Conversas engraçadas</option>
+          <option value="variada">Um pouco de tudo</option>
+        </select>
+      </div>
+
+      <div class="step">
+        <h2>O que mais importa em uma conexão?</h2>
+        <select name="conexao">
+          <option value="">Selecione uma opção</option>
+          <option value="respeito">Respeito</option>
+          <option value="dialogo">Diálogo</option>
+          <option value="objetivos-em-comum">Objetivos em comum</option>
+          <option value="valores-parecidos">Valores parecidos</option>
+          <option value="quimica">Química e afinidade</option>
+          <option value="outro">Outro</option>
+        </select>
+
+        <button class="btn-finalizar" type="submit">Começar a explorar</button>
+      </div>
+
+    </form>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
